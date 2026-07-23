@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azkar Bot — Privacy Policy | سياسة الخصوصية</title>
+<style>
+  :root{
+    --bg:#0b0d12;
+    --bg-card:#12151c;
+    --border:#232733;
+    --text:#e6e8ee;
+    --muted:#9aa2b1;
+    --accent:#d4af37;
+    --accent-soft:#2a2416;
+    --teal:#2fb8a6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:radial-gradient(1200px 600px at 50% -10%, #16192280, transparent), var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Tahoma, Arial, sans-serif;
+    line-height:1.8;
+    padding:0 0 80px;
+  }
+  header{
+    text-align:center;
+    padding:56px 20px 40px;
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(180deg, #14171f, transparent);
+  }
+  header .badge{
+    display:inline-block;
+    padding:6px 16px;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    border-radius:999px;
+    font-size:13px;
+    letter-spacing:.5px;
+    margin-bottom:18px;
+  }
+  header h1{
+    margin:0 0 10px;
+    font-size:28px;
+    font-weight:700;
+  }
+  header p{
+    color:var(--muted);
+    margin:0;
+    font-size:14px;
+  }
+  .container{
+    max-width:760px;
+    margin:0 auto;
+    padding:40px 20px;
+  }
+  .lang-toggle{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:24px auto 0;
+  }
+  .lang-toggle button{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:8px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.2s;
+  }
+  .lang-toggle button.active{
+    border-color:var(--accent);
+    color:var(--accent);
+    background:var(--accent-soft);
+  }
+  section.card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px 28px;
+    margin-bottom:20px;
+  }
+  section.card h2{
+    font-size:18px;
+    margin:0 0 14px;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  section.card p, section.card li{
+    color:#c7cbd6;
+    font-size:15px;
+  }
+  ul{
+    margin:0;
+    padding-inline-start:22px;
+  }
+  li{margin-bottom:8px;}
+  .updated{
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    margin-top:30px;
+  }
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .icon{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+    stroke:var(--accent);
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .contact-box{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+  }
+  .contact-box span{
+    background:#1a1e27;
+    border:1px solid var(--border);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .lang-block{display:none;}
+  .lang-block.active{display:block;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">WANO STUDIO</div>
+  <h1>Azkar Bot — Privacy Policy</h1>
+  <p>سياسة الخصوصية الخاصة ببوت الأذكار</p>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('ar')">العربية</button>
+    <button onclick="setLang('en')">English</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ============ ARABIC ============ -->
+  <div id="ar" class="lang-block active">
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.5" fill="var(--accent)"/></svg> نظرة عامة</h2>
+      <p>
+        Azkar Bot هو بوت ديسكورد إسلامي (تطوير Wano Studio) يقوم بإرسال أذكار وأدعية دورية تلقائيًا
+        في قناة يحددها أدمن السيرفر. توضح هذه الصفحة ما هي البيانات التي يجمعها البوت،
+        وكيف تُستخدم، وكيف يمكنك طلب حذفها.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg> البيانات التي نجمعها</h2>
+      <ul>
+        <li>معرّف السيرفر (Guild ID) واسم السيرفر</li>
+        <li>معرّف القناة (Channel ID) المحددة لإرسال الأذكار</li>
+        <li>إعدادات السيرفر: اللغة المختارة (عربي/إنجليزي)، توقيت إرسال الأذكار</li>
+        <li>حالة "بوستر" (Server Booster) لأعضاء سيرفر الدعم الرسمي فقط، لعرضها في لوحة تحكم مالك البوت</li>
+        <li>محتوى الرسائل: يُقرأ لحظيًا فقط للتحقق من بادئة الأوامر النصية ("+")، ولا يُخزَّن أو يُسجَّل أبدًا</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg> كيف نخزّن البيانات</h2>
+      <p>
+        تُخزَّن البيانات في قاعدة بيانات MongoDB (مع نسخة احتياطية محلية بصيغة JSON) على خوادمنا الخاصة.
+        لا تُشارك هذه البيانات مع أي طرف ثالث، ولا تُستخدم لأغراض إعلانية أو تسويقية،
+        ولا تُستخدم لتدريب أي نماذج ذكاء اصطناعي.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> مدة الاحتفاظ بالبيانات</h2>
+      <p>
+        تبقى بيانات السيرفر مخزَّنة طالما البوت مضافًا للسيرفر. عند إزالة البوت من السيرفر،
+        تُحذف كل البيانات المرتبطة بذلك السيرفر تلقائيًا وفوريًا من قاعدة البيانات.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6"/><path d="M14 11v6"/></svg> طلب حذف البيانات</h2>
+      <p>يمكن حذف بياناتك بإحدى الطرق التالية:</p>
+      <ul>
+        <li>إزالة البوت من سيرفرك — يحذف هذا كل بيانات السيرفر فورًا وتلقائيًا</li>
+        <li>التواصل المباشر مع المطور لطلب حذف يدوي لأي بيانات إضافية (مثل حالة البوستر)</li>
+      </ul>
+      <div class="contact-box">
+        <span>Discord: @oldmaro</span>
+        <span>سيرفر الدعم: discord.gg/NvGxMeNP6t</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg> الأمان</h2>
+      <p>
+        نتخذ إجراءات معقولة لحماية البيانات المخزَّنة من الوصول غير المصرح به،
+        بما يشمل تقييد الوصول لقاعدة البيانات على فريق التطوير فقط.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> تعديلات على هذه السياسة</h2>
+      <p>
+        قد تُحدَّث هذه السياسة من وقت لآخر لتعكس أي تغييرات في وظائف البوت.
+        سيُشار إلى تاريخ آخر تحديث أسفل هذه الصفحة.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div id="en" class="lang-block">
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.5" fill="var(--accent)"/></svg> Overview</h2>
+      <p>
+        Azkar Bot is an Islamic Discord bot (developed by Wano Studio) that automatically sends
+        periodic azkar and duas to a channel chosen by the server admin. This page explains what
+        data the bot collects, how it is used, and how you can request its deletion.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg> Data We Collect</h2>
+      <ul>
+        <li>Guild ID and guild name</li>
+        <li>Channel ID selected for sending azkar</li>
+        <li>Guild settings: chosen language (Arabic/English), sending interval</li>
+        <li>Server Booster status for members of our official support server only, displayed in the owner-only dashboard</li>
+        <li>Message content: read momentarily only to check for the command prefix ("+"), never stored or logged</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg> How We Store Data</h2>
+      <p>
+        Data is stored in a MongoDB database (with a local JSON fallback) on our own servers.
+        This data is never shared with third parties, never used for advertising or marketing,
+        and never used to train any AI/ML models.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Data Retention</h2>
+      <p>
+        Guild data remains stored for as long as the bot is present in that server. When the bot
+        is removed from a server, all data associated with that server is automatically and
+        immediately deleted from our database.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6"/><path d="M14 11v6"/></svg> Requesting Data Deletion</h2>
+      <p>You can have your data deleted through either of these methods:</p>
+      <ul>
+        <li>Remove the bot from your server — this instantly and automatically deletes all data for that server</li>
+        <li>Contact the developer directly to request manual deletion of any additional data (e.g. booster status)</li>
+      </ul>
+      <div class="contact-box">
+        <span>Discord: @oldmaro</span>
+        <span>Support server: discord.gg/NvGxMeNP6t</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg> Security</h2>
+      <p>
+        We take reasonable measures to protect stored data from unauthorized access, including
+        restricting database access to the development team only.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Changes to This Policy</h2>
+      <p>
+        This policy may be updated occasionally to reflect changes in bot functionality.
+        The last updated date is shown at the bottom of this page.
+      </p>
+    </section>
+
+  </div>
+
+  <p class="updated">© 2026 Wano Studio — Last updated: July 24, 2026</p>
+
+</div>
+
+<script>
+  function setLang(lang){
+    document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+    document.getElementById(lang).classList.add('active');
+    document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+</script>
+
+</body>
+</html>
