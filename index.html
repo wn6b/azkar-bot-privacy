@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azkar Bot — Privacy Policy | سياسة الخصوصية</title>
+<style>
+  :root{
+    --bg:#000000;
+    --glass:rgba(255,255,255,0.04);
+    --glass-strong:rgba(255,255,255,0.065);
+    --border:rgba(255,255,255,0.08);
+    --border-glow:rgba(212,175,55,0.3);
+    --text:#eef0f6;
+    --muted:#9aa2b1;
+    --accent:#c9a94a;
+    --accent2:#e0c274;
+    --teal:#3fc9b8;
+    --purple:#8672d9;
+    --pink:#e06fa3;
+  }
+  *{box-sizing:border-box;}
+  ::selection{background:var(--accent); color:#0b0d12;}
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:
+      radial-gradient(1400px 800px at 50% -10%, rgba(255,255,255,0.05), transparent 55%),
+      radial-gradient(1000px 700px at 50% 115%, rgba(255,255,255,0.025), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Tahoma, Arial, sans-serif;
+    line-height:1.8;
+    padding:0 0 90px;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* subtle animated grid / sheen background */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(circle at 50% 20%, black, transparent 75%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* sweeping sheen instead of colorful orbs */
+  body::after{
+    content:"";
+    position:fixed;
+    inset:-20% -20%;
+    background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.05) 48%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.05) 52%, transparent 60%);
+    animation:sheen 9s ease-in-out infinite;
+    pointer-events:none;
+    z-index:0;
+  }
+  @keyframes sheen{
+    0%,100%{transform:translateX(-12%) translateY(-6%);}
+    50%{transform:translateX(12%) translateY(6%);}
+  }
+
+  .orb{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.16;
+    z-index:0;
+    animation:float 14s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .orb1{width:340px;height:340px;background:var(--purple);top:-80px;right:-60px;}
+  .orb2{width:280px;height:280px;background:var(--teal);bottom:0;left:-80px;animation-delay:-6s;}
+  .orb3{width:220px;height:220px;background:var(--accent);top:40%;left:50%;animation-delay:-3s;opacity:.10;}
+  @keyframes float{
+    0%,100%{transform:translateY(0) translateX(0);}
+    50%{transform:translateY(-30px) translateX(20px);}
+  }
+
+  header{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:64px 20px 46px;
+    border-bottom:1px solid var(--border);
+  }
+  header .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 18px;
+    border:1px solid var(--border-glow);
+    color:var(--accent2);
+    border-radius:999px;
+    font-size:12.5px;
+    letter-spacing:1.2px;
+    margin-bottom:20px;
+    background:rgba(212,175,55,0.06);
+    box-shadow:0 0 14px rgba(212,175,55,0.12), inset 0 0 10px rgba(212,175,55,0.04);
+    backdrop-filter:blur(6px);
+  }
+  header .badge .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 8px var(--teal), 0 0 16px var(--teal);
+  }
+  header h1{
+    margin:0 0 12px;
+    font-size:clamp(24px,4vw,34px);
+    font-weight:800;
+    background:linear-gradient(90deg, #fff, var(--accent2) 55%, var(--teal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing:.3px;
+  }
+  header p.subtitle{
+    color:var(--muted);
+    margin:0 0 30px;
+    font-size:14.5px;
+  }
+
+  /* Bubble action buttons */
+  .action-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .bubble-btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:13px 26px;
+    border-radius:999px;
+    font-size:14.5px;
+    font-weight:600;
+    text-decoration:none;
+    color:#0b0d12;
+    cursor:pointer;
+    border:none;
+    isolation:isolate;
+    overflow:hidden;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+  }
+  .bubble-btn svg{width:18px;height:18px;stroke:#12141a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .bubble-btn.invite{
+    background:linear-gradient(135deg, var(--teal), #6fbdb0);
+    color:#0e1512;
+    box-shadow:0 6px 18px rgba(63,201,184,0.22), 0 0 0 1px rgba(63,201,184,0.18) inset;
+  }
+  .bubble-btn.support{
+    background:linear-gradient(135deg, var(--purple), #9c8ed1);
+    box-shadow:0 6px 18px rgba(134,114,217,0.22), 0 0 0 1px rgba(134,114,217,0.18) inset;
+    color:#13111c;
+  }
+  .bubble-btn.invite svg{stroke:#0e1512;}
+  .bubble-btn.support svg{stroke:#13111c;}
+  .bubble-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+  }
+  .bubble-btn.invite:hover{box-shadow:0 10px 24px rgba(63,201,184,0.32);}
+  .bubble-btn.support:hover{box-shadow:0 10px 24px rgba(134,114,217,0.32);}
+  .bubble-btn::after{
+    content:"";
+    position:absolute;
+    top:-40%;
+    left:-20%;
+    width:55%;
+    height:180%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform:rotate(20deg) translateX(-160%);
+    transition:transform .7s ease;
+  }
+  .bubble-btn:hover::after{transform:rotate(20deg) translateX(160%);}
+
+  /* Language toggle - glass pill */
+  .lang-toggle{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin:0 auto;
+    padding:6px;
+    width:max-content;
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:999px;
+    backdrop-filter:blur(14px);
+  }
+  .lang-toggle button{
+    background:transparent;
+    border:none;
+    color:var(--muted);
+    padding:9px 22px;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
+  }
+  .lang-toggle button.active{
+    color:#12100a;
+    background:linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow:0 0 12px rgba(212,175,55,0.3);
+  }
+
+  .container{
+    position:relative;
+    z-index:1;
+    max-width:800px;
+    margin:0 auto;
+    padding:46px 20px 0;
+  }
+
+  section.card{
+    position:relative;
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px 30px;
+    margin-bottom:22px;
+    backdrop-filter:blur(16px) saturate(140%);
+    -webkit-backdrop-filter:blur(16px) saturate(140%);
+    box-shadow:0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    overflow:hidden;
+  }
+  section.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:18px;
+    padding:1px;
+    background:linear-gradient(135deg, rgba(212,175,55,0.22), transparent 30%, transparent 70%, rgba(63,201,184,0.16));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+    opacity:.7;
+  }
+  section.card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(212,175,55,0.3);
+    box-shadow:0 12px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(212,175,55,0.12), 0 0 30px rgba(212,175,55,0.08);
+  }
+
+  section.card h2{
+    font-size:18.5px;
+    margin:0 0 16px;
+    color:var(--accent2);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-shadow:0 0 18px rgba(212,175,55,0.25);
+  }
+  section.card h2 .icon-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    border-radius:12px;
+    background:rgba(212,175,55,0.08);
+    border:1px solid rgba(212,175,55,0.25);
+    box-shadow:0 0 14px rgba(212,175,55,0.18) inset;
+  }
+  section.card p, section.card li{
+    color:#c7cbd6;
+    font-size:15px;
+  }
+  ul{margin:0; padding-inline-start:22px;}
+  li{margin-bottom:9px;}
+  .updated{
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    margin-top:36px;
+    padding-top:26px;
+    border-top:1px solid var(--border);
+  }
+  .updated .brand{
+    color:var(--accent2);
+    font-weight:700;
+  }
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .icon{
+    width:19px;
+    height:19px;
+    flex-shrink:0;
+    stroke:var(--accent2);
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .contact-box{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:16px;
+  }
+  .contact-box span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    padding:9px 15px;
+    border-radius:999px;
+    font-size:13px;
+    color:var(--muted);
+    backdrop-filter:blur(8px);
+  }
+  .contact-box span b{color:var(--teal); font-weight:600;}
+
+  .lang-block{display:none;}
+  .lang-block.active{display:block; animation:fadeIn .4s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  footer.foot-links{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+  }
+  footer.foot-links a.chip{
+    font-size:12.5px;
+    color:var(--muted);
+    border:1px solid var(--border);
+    padding:7px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.03);
+    transition:.2s;
+  }
+  footer.foot-links a.chip:hover{
+    color:var(--accent2);
+    border-color:rgba(212,175,55,0.4);
+    text-decoration:none;
+  }
+
+  @media (max-width:520px){
+    .bubble-btn{padding:12px 20px; font-size:13.5px;}
+    section.card{padding:22px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<header>
+  <div class="badge"><span class="dot"></span> WANO STUDIO</div>
+  <h1 data-key="title">Azkar Bot — Privacy Policy</h1>
+  <p class="subtitle" data-key="subtitle">سياسة الخصوصية الخاصة ببوت الأذكار</p>
+
+  <div class="action-row">
+    <a class="bubble-btn invite" href="https://discord.com/oauth2/authorize?client_id=1507767451973320904&permissions=277293934656&scope=bot%20applications.commands" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      <span data-key="btn_invite">إضافة البوت</span>
+    </a>
+    <a class="bubble-btn support" href="https://discord.gg/NvGxMeNP6t" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.4 8.4 0 01-4-1L3 20l1.1-3.5A8.4 8.4 0 013 12.5 8.5 8.5 0 0111.5 4 8.5 8.5 0 0121 11.5z"/></svg>
+      <span data-key="btn_support">سيرفر الدعم</span>
+    </a>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('ar', this)">العربية</button>
+    <button onclick="setLang('en', this)">English</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ============ ARABIC ============ -->
+  <div id="ar" class="lang-block active">
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.5" fill="var(--accent2)"/></svg></span> نظرة عامة</h2>
+      <p>
+        Azkar Bot هو بوت ديسكورد إسلامي (تطوير Wano Studio) يقوم بإرسال أذكار وأدعية دورية تلقائيًا
+        في قناة يحددها أدمن السيرفر. توضح هذه الصفحة ما هي البيانات التي يجمعها البوت،
+        وكيف تُستخدم، وكيف يمكنك طلب حذفها.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span> البيانات التي نجمعها</h2>
+      <ul>
+        <li>معرّف السيرفر (Guild ID) واسم السيرفر</li>
+        <li>معرّف القناة (Channel ID) المحددة لإرسال الأذكار</li>
+        <li>إعدادات السيرفر: اللغة المختارة (عربي/إنجليزي)، توقيت إرسال الأذكار</li>
+        <li>حالة "بوستر" (Server Booster) لأعضاء سيرفر الدعم الرسمي فقط، لعرضها في لوحة تحكم مالك البوت</li>
+        <li>محتوى الرسائل: يُقرأ لحظيًا فقط للتحقق من بادئة الأوامر النصية، ولا يُخزَّن أو يُسجَّل أبدًا</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span> كيف نخزّن البيانات</h2>
+      <p>
+        تُخزَّن البيانات في قاعدة بيانات MongoDB (مع نسخة احتياطية محلية بصيغة JSON) على خوادمنا الخاصة.
+        لا تُشارك هذه البيانات مع أي طرف ثالث، ولا تُستخدم لأغراض إعلانية أو تسويقية،
+        ولا تُستخدم لتدريب أي نماذج ذكاء اصطناعي.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span> مدة الاحتفاظ بالبيانات</h2>
+      <p>
+        تبقى بيانات السيرفر مخزَّنة طالما البوت مضافًا للسيرفر. عند إزالة البوت من السيرفر،
+        تُحذف كل البيانات المرتبطة بذلك السيرفر تلقائيًا وفوريًا من قاعدة البيانات.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></span> طلب حذف البيانات</h2>
+      <p>يمكن حذف بياناتك بإحدى الطرق التالية:</p>
+      <ul>
+        <li>إزالة البوت من سيرفرك — يحذف هذا كل بيانات السيرفر فورًا وتلقائيًا</li>
+        <li>التواصل المباشر مع المطور عبر سيرفر الدعم لطلب حذف يدوي لأي بيانات إضافية (مثل حالة البوستر)</li>
+      </ul>
+      <div class="contact-box">
+        <span>Discord: <b>@oldmaro</b></span>
+        <span>سيرفر الدعم: <b>discord.gg/NvGxMeNP6t</b></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span> الأمان</h2>
+      <p>
+        نتخذ إجراءات معقولة لحماية البيانات المخزَّنة من الوصول غير المصرح به،
+        بما يشمل تقييد الوصول لقاعدة البيانات على فريق التطوير فقط.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span> تعديلات على هذه السياسة</h2>
+      <p>
+        قد تُحدَّث هذه السياسة من وقت لآخر لتعكس أي تغييرات في وظائف البوت.
+        سيُشار إلى تاريخ آخر تحديث أسفل هذه الصفحة.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg></span> تواصل معنا</h2>
+      <p>
+        لأي استفسار بخصوص هذه السياسة أو خصوصية بياناتك، تواصل معنا عبر سيرفر الدعم الرسمي
+        أو مباشرة على ديسكورد <b style="color:var(--teal)">@oldmaro</b>.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div id="en" class="lang-block">
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><circle cx="12" cy="16" r="0.5" fill="var(--accent2)"/></svg></span> Overview</h2>
+      <p>
+        Azkar Bot is an Islamic Discord bot (developed by Wano Studio) that automatically sends
+        periodic azkar and duas to a channel chosen by the server admin. This page explains what
+        data the bot collects, how it is used, and how you can request its deletion.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span> Data We Collect</h2>
+      <ul>
+        <li>Guild ID and guild name</li>
+        <li>Channel ID selected for sending azkar</li>
+        <li>Guild settings: chosen language (Arabic/English), sending interval</li>
+        <li>Server Booster status for members of our official support server only, displayed in the owner-only dashboard</li>
+        <li>Message content: read momentarily only to check for the command prefix, never stored or logged</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span> How We Store Data</h2>
+      <p>
+        Data is stored in a MongoDB database (with a local JSON fallback) on our own servers.
+        This data is never shared with third parties, never used for advertising or marketing,
+        and never used to train any AI/ML models.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span> Data Retention</h2>
+      <p>
+        Guild data remains stored for as long as the bot is present in that server. When the bot
+        is removed from a server, all data associated with that server is automatically and
+        immediately deleted from our database.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></span> Requesting Data Deletion</h2>
+      <p>You can have your data deleted through either of these methods:</p>
+      <ul>
+        <li>Remove the bot from your server — this instantly and automatically deletes all data for that server</li>
+        <li>Contact the developer through the support server to request manual deletion of any additional data (e.g. booster status)</li>
+      </ul>
+      <div class="contact-box">
+        <span>Discord: <b>@oldmaro</b></span>
+        <span>Support server: <b>discord.gg/NvGxMeNP6t</b></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span> Security</h2>
+      <p>
+        We take reasonable measures to protect stored data from unauthorized access, including
+        restricting database access to the development team only.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span> Changes to This Policy</h2>
+      <p>
+        This policy may be updated occasionally to reflect changes in bot functionality.
+        The last updated date is shown at the bottom of this page.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg></span> Contact Us</h2>
+      <p>
+        For any question regarding this policy or your data privacy, reach out through our
+        official support server or directly on Discord at <b style="color:var(--teal)">@oldmaro</b>.
+      </p>
+    </section>
+
+  </div>
+
+  <p class="updated">
+    <span class="brand">© 2026 Wano Studio</span> — <span data-key="updated">آخر تحديث: 24 يوليو 2026</span>
+    <br>
+    <span data-key="rights">جميع الحقوق محفوظة للمطور @oldmaro — يُمنع إعادة نسب هذا البوت أو المشروع لأي جهة أخرى</span>
+  </p>
+
+  <footer class="foot-links">
+    <a class="chip" href="https://discord.com/oauth2/authorize?client_id=1507767451973320904&permissions=277293934656&scope=bot%20applications.commands" target="_blank" rel="noopener" data-key="btn_invite">إضافة البوت</a>
+    <a class="chip" href="https://discord.gg/NvGxMeNP6t" target="_blank" rel="noopener" data-key="btn_support">سيرفر الدعم</a>
+  </footer>
+
+</div>
+
+<script>
+  const translations = {
+    ar: {
+      title: "Azkar Bot — سياسة الخصوصية",
+      subtitle: "سياسة الخصوصية الخاصة ببوت الأذكار",
+      btn_invite: "إضافة البوت",
+      btn_support: "سيرفر الدعم",
+      updated: "آخر تحديث: 24 يوليو 2026",
+      rights: "جميع الحقوق محفوظة للمطور @oldmaro — يُمنع إعادة نسب هذا البوت أو المشروع لأي جهة أخرى"
+    },
+    en: {
+      title: "Azkar Bot — Privacy Policy",
+      subtitle: "Privacy Policy for the Azkar Discord Bot",
+      btn_invite: "Add the Bot",
+      btn_support: "Support Server",
+      updated: "Last updated: July 24, 2026",
+      rights: "All rights reserved to developer @oldmaro — reproduction or re-attribution of this bot/project is prohibited"
+    }
+  };
+
+  function applyTranslations(lang){
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+  }
+
+  function setLang(lang, btn){
+    document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+    document.getElementById(lang).classList.add('active');
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    applyTranslations(lang);
+    localStorage.setItem('azkar_privacy_lang', lang);
+  }
+
+  // restore saved language preference on load
+  (function init(){
+    const saved = localStorage.getItem('azkar_privacy_lang');
+    if(saved && saved !== 'ar'){
+      const btn = document.querySelectorAll('.lang-toggle button')[saved === 'en' ? 1 : 0];
+      setLang(saved, btn);
+    } else {
+      applyTranslations('ar');
+    }
+  })();
+</script>
+
+</body>
+</html>
