@@ -150,6 +150,6 @@ All rights reserved to **Wano Studio**. Re-attribution or redistribution of this
 
 <img src="https://img.shields.io/badge/Discord-@oldmaro-5865F2?style=flat-square&logo=discord&logoColor=white"/>
 <img src="https://img.shields.io/badge/GitHub-@wn6b-181717?style=flat-square&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/TikTok-@44l___s-000000?style=flat-square&logo=tiktok&logoColor=white"/>
+<img src="https://img.shields.io/badge/TikTok-@44l_s-000000?style=flat-square&logo=tiktok&logoColor=white"/>
 
 </div>
